@@ -1,7 +1,7 @@
-# 8-bit CPU Design
+CPU Design
 
 ## Overview
-This project showcases the design and implementation of a simple 8-bit CPU using Verilog. The CPU architecture is modular, with key components such as the Arithmetic Logic Unit (ALU), Control Unit, Register File, and Data Memory working together to perform basic arithmetic, logic, and control operations. This project serves as an educational tool for understanding the fundamental operations and structure of a CPU.
+This project showcases the design and implementation of a CPU using Verilog. The CPU architecture is modular, with key components such as the Arithmetic Logic Unit (ALU), Control Unit, Register File, and Data Memory working together to perform basic arithmetic, logic, and control operations. This project serves as an educational tool for understanding the fundamental operations and structure of a CPU.
 
 ## Architecture
 The CPU is designed with a modular approach, where each component is responsible for specific tasks that collectively enable the CPU to perform basic arithmetic, logic, and control operations. The following diagram provides a high-level overview of the CPU's architecture:
