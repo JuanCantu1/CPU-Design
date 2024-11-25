@@ -58,4 +58,4 @@ The CPU is designed with a modular approach, where each component is responsible
 Each component was thoroughly tested through simulations to verify its functionality and ensure correct integration within the CPU design. The simulation results presented above illustrate the behavior and performance of the individual components.
 
 ## Conclusion
-This 8-bit CPU design project offers a practical exploration of CPU architecture, making it a valuable resource for those interested in digital system design and computer architecture. The project demonstrates how various components are integrated into a functioning CPU capable of executing basic instructions.
+This CPU design project offers a practical exploration of CPU architecture, making it a valuable resource for those interested in digital system design and computer architecture. The project demonstrates how various components are integrated into a functioning CPU capable of executing basic instructions.
