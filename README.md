@@ -1,4 +1,4 @@
-CPU Design
+# CPU Design
 
 ## Overview
 This project showcases the design and implementation of a CPU using Verilog. The CPU architecture is modular, with key components such as the Arithmetic Logic Unit (ALU), Control Unit, Register File, and Data Memory working together to perform basic arithmetic, logic, and control operations. This project serves as an educational tool for understanding the fundamental operations and structure of a CPU.
