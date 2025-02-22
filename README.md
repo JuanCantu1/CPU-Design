@@ -1,3 +1,5 @@
+**[NOTE] This project is being revisited as part of the EECE 6380: Computer Architecture graduate course at UTRGV, where we are expanding and enhancing the design with the following: We are designing and implementing a single-core, 32-bit pipelined CPU with a five-stage pipeline architecture (fetch, decode, execute, memory, write-back), significantly improving instruction throughput over a non-pipelined design. We are upgrading the original 8-bit architecture to 32-bit to support more complex operations and larger data handling. We will integrate hazard detection and forwarding mechanisms to minimize pipeline stalls and optimize execution efficiency. Additionally, we are simulating and validating functionality through comprehensive testbenches, ensuring the correct operation of individual components and the complete CPU execution cycle.**
+
 # CPU Design
 
 ## Overview
