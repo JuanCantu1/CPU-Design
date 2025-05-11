@@ -86,13 +86,9 @@ Below is the final register file content with hexadecimal values and notes showi
 
 ---
 
-## 🗃️ Final Data Memory Contents
+## 📊 Full Pipeline and Register Trace
 
-```
-0x00000D → 0x000000
-```
-
-Testing table:
+This table captures every cycle of execution, showing pipeline state and full register file contents across all 23 clock cycles:
 
 |   Cycle | WB Stage                      | EXEC Stage        | FETCH (PC)       | Reg $00–$03                                            | Reg $04–$07                                            | Reg $08–$11                                            | Reg $12–$15                                            |
 |--------:|:------------------------------|:------------------|:-----------------|:-------------------------------------------------------|:-------------------------------------------------------|:-------------------------------------------------------|:-------------------------------------------------------|
@@ -120,3 +116,11 @@ Testing table:
 |      22 | opcode=5, dest=$8, result=13  | —                 | HALT at 0x0007DF | $00=0x000000, $01=0x000001, $02=0x000001, $03=0x0000FF | $04=0x00000F, $05=0x000000, $06=0x000010, $07=0x000004 | $08=0x000000, $09=0x000000, $10=0x000000, $11=0x000000 | $12=0x000000, $13=0x000000, $14=0x000000, $15=0x000000 |
 |      23 | opcode=8, dest=$None          | —                 | HALT at 0x0007DF | $00=0x000000, $01=0x000001, $02=0x000001, $03=0x0000FF | $04=0x00000F, $05=0x000000, $06=0x000010, $07=0x000004 | $08=0x000000, $09=0x000000, $10=0x000000, $11=0x000000 | $12=0x000000, $13=0x000000, $14=0x000000, $15=0x000000 |
 
+
+---
+
+## 🗃️ Final Data Memory Contents
+
+```
+0x00000D → 0x000000
+```
