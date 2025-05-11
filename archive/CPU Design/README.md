@@ -1,5 +1,3 @@
-**[NOTE] This project is being revisited as part of the EECE 6380: Computer Architecture graduate course at UTRGV, where we are expanding and enhancing the design with the following: We are designing and implementing a single-core, 24-bit RISC processor with a five-stage pipelined architecture (Instruction Fetch, Decode, Execute, Memory, Write-Back) to improve instruction throughput and execution efficiency. The datapath and control unit are being developed in Verilog HDL, with components including an ALU, register file, and integrated hazard detection and forwarding logic to reduce pipeline stalls. Validation is performed using a custom cycle-accurate pipeline simulator that outputs register and memory states at each cycle to ensure correct behavior across the entire execution cycle.**
-
 # CPU Design
 
 ## Overview
