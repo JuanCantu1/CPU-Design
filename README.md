@@ -1,4 +1,4 @@
-> 📌 **Note:** This project began as a Python-based 24-bit RISC CPU simulator. It’s now evolving into a full Verilog RISC-V implementation targeting the DE1-SoC FPGA in Summer 2025.
+📌 **Note:** This project began as a Python-based 24-bit RISC CPU simulator. It’s now evolving into a full Verilog RISC-V implementation targeting the DE1-SoC FPGA in Summer 2025.
 
 ---
 
@@ -122,4 +122,4 @@ This table captures every cycle of execution, showing pipeline state and full re
 ## Conclusion
 This project successfully demonstrates the design and simulation of a 24-bit pipelined RISC processor using Python. By implementing a custom ISA and modeling each pipeline stage at the cycle level, it provides a clear educational foundation in computer architecture concepts such as instruction flow, register management, and memory interaction.
 
-Looking ahead, this simulation serves as the groundwork for a full Verilog-based RISC-V CPU targeting the DE1-SoC FPGA platform. The upcoming implementation will explore hardware verification, performance benchmarks, and real program execution on physical hardware
+Looking ahead, this simulation serves as the groundwork for a full Verilog-based RISC-V CPU targeting the DE1-SoC FPGA platform. The upcoming implementation will explore hardware verification, performance benchmarks, and real program execution on physical hardware.
