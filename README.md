@@ -1,63 +1,85 @@
-**[NOTE] This project is being revisited as part of the EECE 6380: Computer Architecture graduate course at UTRGV, where we are expanding and enhancing the design with the following: We are designing and implementing a single-core, 24-bit RISC processor with a five-stage pipelined architecture (Instruction Fetch, Decode, Execute, Memory, Write-Back) to improve instruction throughput and execution efficiency. The datapath and control unit are being developed in Verilog HDL, with components including an ALU, register file, and integrated hazard detection and forwarding logic to reduce pipeline stalls. Validation is performed using a custom cycle-accurate pipeline simulator that outputs register and memory states at each cycle to ensure correct behavior across the entire execution cycle.**
+---
 
-# CPU Design
+# 🧠 24-bit RISC CPU Simulator
 
-## Overview
-This project showcases the design and implementation of a CPU using Verilog. The CPU architecture is modular, with key components such as the Arithmetic Logic Unit (ALU), Control Unit, Register File, and Data Memory working together to perform basic arithmetic, logic, and control operations. This project serves as an educational tool for understanding the fundamental operations and structure of a CPU.
+## Project Overview
 
-## Architecture
-The CPU is designed with a modular approach, where each component is responsible for specific tasks that collectively enable the CPU to perform basic arithmetic, logic, and control operations. The following diagram provides a high-level overview of the CPU's architecture:
+This project simulates a 24-bit RISC processor with a five-stage pipeline architecture (IF, ID, EX, MEM, WB). Designed entirely in Python, it models instruction execution at the cycle level using a custom 17-instruction ISA. The goal was to understand pipelining by simulating instruction flow, register updates, and memory interactions — all without relying on Verilog (yet).
 
-<div align="center">
-  <img src="https://github.com/JuanCantu1/8-bit-CPU-Design/blob/main/CPU%20Design/Schematic.jpg" alt="CPU Block Diagram">
-</div>
+---
 
-### Key Components
+## 💾 Core Features
 
-- **ALU (Arithmetic Logic Unit):** 
-  - Responsible for performing essential arithmetic (addition, subtraction, etc.) and logic (AND, OR, NOT, etc.) operations. The ALU is a critical component in executing instructions and manipulating data within the CPU.
-  
-  <div align="center">
-    <img src="https://github.com/JuanCantu1/8-bit-CPU-Design/blob/main/CPU%20Design/ALU/ALU%20Simulation2%20.jpg" alt="ALU Simulation Results">
-  </div>
+* 🧱 **Custom 24-bit Instruction Set**
+* ⚙️ **5-Stage Pipeline** (Fetch, Decode, Execute, Memory, Writeback)
+* 🔁 **Cycle-by-Cycle Logging**
+* 📄 **Hex-encoded Instruction Input**
+* 🛠️ **Fully Modular Python Design**
 
-- **Control Unit:** 
-  - Decodes instructions and generates the necessary control signals to manage the operations of the CPU. It orchestrates the actions of other components based on the instructions fetched from memory.
-  
-  <div align="center">
-    <img src="https://github.com/JuanCantu1/8-bit-CPU-Design/blob/main/CPU%20Design/ControlUnit/ControlUnit%20Simulation1.jpg" alt="Control Unit Simulation Results">
-  </div>
+---
 
-- **Register File:** 
-  - A set of registers used to store intermediate data and operands required by the ALU and other CPU components. It provides quick access to frequently used data, enhancing CPU performance.
-  
-  <div align="center">
-    <img src="https://github.com/JuanCantu1/8-bit-CPU-Design/blob/main/CPU%20Design/RegisterFile/RegFile%20Simulation1.jpg" alt="Register File Simulation Results">
-  </div>
+## 📁 Files Breakdown
 
-- **Data Memory:** 
-  - Interfaces with the CPU to store and retrieve data during load/store operations. It serves as the main memory unit, enabling data persistence across different stages of CPU operations.
-  
-  <div align="center">
-    <img src="https://github.com/JuanCantu1/8-bit-CPU-Design/blob/main/CPU%20Design/DataMemory/DataMemory%20Simulation1.jpg" alt="Data Memory Simulation Results">
-  </div>
+| File                 | Description                                   |
+| -------------------- | --------------------------------------------- |
+| `main.py`            | 🚀 Entry point – runs the pipeline simulation |
+| `cpu_pipeline.py`    | 🔧 Manages instruction flow through pipeline  |
+| `register_file.py`   | 🧠 Implements register reads/writes           |
+| `memory.py`          | 💾 Simulates both instruction and data memory |
+| `instruction_set.py` | 🗂️ Instruction format and opcodes            |
+| `test_program.txt`   | 🧪 Sample program (hex-encoded instructions)  |
+| `utils.py`           | 🧰 Misc. formatting and helper functions      |
 
-- **Program Counter (PC):** 
-  - The Program Counter keeps track of the address of the next instruction to be executed. It increments automatically or jumps to a specific address during branch instructions.
-  
-  <div align="center">
-    <img src="https://github.com/JuanCantu1/8-bit-CPU-Design/blob/main/CPU%20Design/ProgramCounter/PC%20Simulation1.jpg" alt="Program Counter Results">
-  </div>
+---
 
-- **IInstruction Memory (IM):** 
-  - Instruction Memory stores the instructions to be executed by the CPU. The Control Unit fetches instructions from this memory based on the Program Counter's value.
-  
-  <div align="center">
-    <img src="https://github.com/JuanCantu1/8-bit-CPU-Design/blob/main/CPU%20Design/InstructionMemory/InstructionMemory%20Simulation1.jpg" alt="Instruction Memory Results">
-  </div>
-  
-## Simulations and Testing
-Each component was thoroughly tested through simulations to verify its functionality and ensure correct integration within the CPU design. The simulation results presented above illustrate the behavior and performance of the individual components.
+## 🧠 Instruction Pipeline
 
-## Conclusion
-This CPU design project offers a practical exploration of CPU architecture, making it a valuable resource for those interested in digital system design and computer architecture. The project demonstrates how various components are integrated into a functioning CPU capable of executing basic instructions.
+Each instruction moves through a five-stage pipeline. There’s no hazard detection or forwarding — just raw instruction flow.
+
+```
+Cycle 1: IF     → Fetch instruction at PC
+Cycle 2: ID     → Decode and read registers
+Cycle 3: EX     → ALU operations
+Cycle 4: MEM    → Access memory (lw/sw)
+Cycle 5: WB     → Write result to register file
+```
+
+---
+
+<details>
+<summary>📜 Supported Instructions</summary>
+
+| Mnemonic | Type | Description          |
+| -------- | ---- | -------------------- |
+| `addi`   | R/I  | Add immediate        |
+| `ori`    | R/I  | Bitwise OR immediate |
+| `and`    | R    | Bitwise AND          |
+| `sub`    | R    | Subtract             |
+| `lw`     | I    | Load word from RAM   |
+| `sw`     | I    | Store word to RAM    |
+| `beq`    | I    | Branch if equal      |
+| `j`      | J    | Unconditional jump   |
+
+</details>
+
+---
+
+
+## 🧪 Sample Output
+
+```
+Cycle 1 | Fetch: PC=0x000000
+Cycle 2 | Decode: addi $1, $0, 5
+Cycle 3 | Execute: $1 = $0 + 5
+Cycle 4 | Memory: (NOP)
+Cycle 5 | Writeback: Reg[1] = 5
+```
+
+---
+
+## 📌 Notes
+
+* This version was written in Python due to time constraints.
+* A full Verilog implementation targeting RISC-V will be developed on the DE1-SoC board during Summer 2025.
+
+---
