@@ -1,3 +1,5 @@
+> 📌 **Note:** This project began as a 24-bit RISC processor simulator in Python. It is now being expanded into a full RISC-V implementation using Verilog, targeting the DE1-SoC FPGA platform in Summer 2025.
+
 ---
 
 # 🧠 24-bit RISC CPU Simulator
@@ -35,6 +37,8 @@ This project simulates a 24-bit RISC processor with a five-stage pipeline archit
 ## 🧠 Instruction Pipeline
 
 Each instruction moves through a five-stage pipeline. There’s no hazard detection or forwarding — just raw instruction flow.
+
+
 
 ```
 Cycle 1: IF     → Fetch instruction at PC
@@ -74,12 +78,5 @@ Cycle 3 | Execute: $1 = $0 + 5
 Cycle 4 | Memory: (NOP)
 Cycle 5 | Writeback: Reg[1] = 5
 ```
-
----
-
-## 📌 Notes
-
-* This version was written in Python due to time constraints.
-* A full Verilog implementation targeting RISC-V will be developed on the DE1-SoC board during Summer 2025.
 
 ---
