@@ -119,8 +119,7 @@ This table captures every cycle of execution, showing pipeline state and full re
 
 ---
 
-## 🗃️ Final Data Memory Contents
+## Conclusion
+This project successfully demonstrates the design and simulation of a 24-bit pipelined RISC processor using Python. By implementing a custom ISA and modeling each pipeline stage at the cycle level, it provides a clear educational foundation in computer architecture concepts such as instruction flow, register management, and memory interaction.
 
-```
-0x00000D → 0x000000
-```
+Looking ahead, this simulation serves as the groundwork for a full Verilog-based RISC-V CPU targeting the DE1-SoC FPGA platform. The upcoming implementation will explore hardware verification, performance benchmarks, and real program execution on physical hardware
