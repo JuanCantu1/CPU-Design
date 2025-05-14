@@ -2,7 +2,7 @@
 
 ---
 
-# 🧠 24-bit RISC CPU Simulator (Python)
+# 🧠 24-bit RISC CPU Simulator
 
 ## 🚀 Overview
 
