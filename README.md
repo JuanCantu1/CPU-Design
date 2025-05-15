@@ -1,4 +1,4 @@
-📌 **Note:** This project began as a Python-based 24-bit RISC CPU simulator. It’s now evolving into a full Verilog RISC-V implementation targeting the DE1-SoC FPGA in Summer 2025.
+📌 **Note:** This project originally began as an 8-bit CPU written in Verilog. It then evolved into a Python-based simulator for a custom 24-bit RISC pipeline processor, built to explore instruction flow and pipelining in software. The next phase, coming in Summer 2025, is a full RISC-V CPU implementation in Verilog targeting the DE1-SoC FPGA.
 
 ---
 
