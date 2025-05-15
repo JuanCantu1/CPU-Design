@@ -66,6 +66,39 @@ Cycle 5 → WB   : Write result to register file
 
 ---
 
+## 🧪 Test Program: Assembly to Binary Mapping
+
+This is the actual test program used in the simulation. It corresponds to the register file snapshot and full pipeline trace shown earlier in this README. Each instruction is listed alongside its 24-bit binary machine code encoding, as executed by the Python-based CPU simulator.
+
+| Assembly Instruction     | Machine Code (24-bit Binary)       |
+|--------------------------|-------------------------------------|
+| `addi $1, $0, 1`         | `00001 0000 0001 00000000001`       |
+| `addi $2, $0, 1`         | `00001 0000 0010 00000000001`       |
+| `ori  $3, $0, 255`       | `00010 0000 0011 01111111111`       |
+| `addi $4, $0, 15`        | `00001 0000 0100 00000001111`       |
+| `addi $5, $0, 0`         | `00001 0000 0101 00000000000`       |
+| `addi $6, $0, 16`        | `00001 0000 0110 00000100000`       |
+| `addi $7, $0, 5`         | `00001 0000 0111 00000000101`       |
+| `lw $8, 256($0)`         | `00100 0000 1000 10000000000`       |
+| `bgtz $7, body`          | `00111 0111 0000 00000000010`       |
+| `j exit`                 | `01000 0000 0000 00000000100`       |
+| `addi $7, $7, -1`        | `00001 0111 0111 11111111111`       |
+| `lw $5, 0($6)`           | `00100 0110 0101 00000000000`       |
+| `addi $6, $6, 3`         | `00001 0110 0110 00000000011`       |
+| `bgtz $5, then`          | `00111 0101 0000 00000000010`       |
+| `j else`                 | `01000 0000 0000 00000000110`       |
+| `mul $1, $1, $9`         | `00000 0001 1001 0001 0000010`       |
+| `xor $2, $2, $5`         | `00000 0010 0101 0010 0000011`       |
+| `sw $8, -3($6)`          | `00101 0110 1000 11111111101`       |
+| `j loop`                 | `01000 0000 0000 11111110001`       |
+| `srl $3, $3, 1`          | `00000 0011 0001 0011 0000100`       |
+| `sub $4, $4, $5`         | `00000 0100 0101 0100 0000001`       |
+| `sw $8, -3($6)`          | `00101 0110 1000 11111111101`       |
+| `j loop`                 | `01000 0000 0000 11111101111`       |
+
+
+---
+
 ## 🧩 Pipeline State Table (Cycles 1–5)
 
 This figure shows instruction progression across the Writeback, Execute, and Fetch stages during the first five cycles of execution:
